@@ -39,7 +39,8 @@
   },
   "lint-staged": {
     "app/**/*.{ts,tsx}": [
-      "npm run prettier"
+      "pnpm run lint",
+      "pnpm run format"
     ]
   }
 }
