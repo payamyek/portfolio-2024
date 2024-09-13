@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "prepare": "husky",
+    "format": "prettier --write .",
     "pre-commit": "lint-staged"
   },
   "dependencies": {
@@ -31,8 +32,13 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "app/**/*.{ts,tsx}": [
       "npm run prettier"
     ]
   }
