@@ -12,7 +12,7 @@
     "format": "prettier --write --ignore-unknown"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "pnpm run lint"
     ],
     "*.{json,ts,tsx,html}": [
