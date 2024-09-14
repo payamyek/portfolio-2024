@@ -5,3 +5,4 @@ public
 next-env.d.ts
 next.config.mjs
 dist
+node_modules

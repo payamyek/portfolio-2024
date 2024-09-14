@@ -15,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${spaceMono.className} antialiased`}>{children}</body>
+      <body
+        className={`${spaceMono.className} flex h-screen w-screen items-center justify-center antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
