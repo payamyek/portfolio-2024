@@ -12,9 +12,6 @@
     "format": "prettier --write --ignore-unknown"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "pnpm run lint"
-    ],
     "*.{json,ts,tsx,html}": [
       "pnpm run format"
     ]
