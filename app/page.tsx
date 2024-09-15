@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaGithub, FaLinkedinIn, FaMediumM, FaFilePdf } from 'react-icons/fa';
 
 import IconLink from './ui/social-media-linnk';
