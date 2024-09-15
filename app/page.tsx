@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import { FaGithub, FaLinkedinIn, FaMediumM, FaFilePdf } from 'react-icons/fa';
 
-import IconLink from './ui/social-media-linnk';
+import IconLink from './ui/icon-link';
 
 export default function Home() {
   return (
-    <div className='flex justify-center gap-x-14'>
-      <div className='flex flex-col justify-center'>
+    <div className='flex justify-center gap-x-16'>
+      <div className='flex flex-col justify-center gap-y-16'>
         <div className='flex flex-col gap-y-5'>
           <div className='text-center text-8xl'>Payam</div>
           <div className='text-8xl'>Yektamaram</div>
         </div>
-        <div className='mt-10 flex flex-col gap-y-5'>
+        <div className='flex flex-col gap-y-5'>
           <span className='text-center text-4xl'>
             Full-stack Developer @ MPAC
           </span>
