@@ -20,19 +20,19 @@ export default function Home() {
           </span>
           <div className='flex justify-center gap-x-5'>
             <IconLink
-              link='https://github.com/payamyek'
+              href='https://github.com/payamyek'
               icon={<FaGithub size={35} />}
             />
             <IconLink
-              link='https://medium.com/@thelostobserver'
+              href='https://medium.com/@thelostobserver'
               icon={<FaMediumM size={35} />}
             />
             <IconLink
-              link='https://www.linkedin.com/in/payamyek/'
+              href='https://www.linkedin.com/in/payamyek/'
               icon={<FaLinkedinIn size={35} />}
             />
             <IconLink
-              link='https://cdn.jsdelivr.net/gh/payamyek/career@main/resume/resume.pdf'
+              href='https://cdn.jsdelivr.net/gh/payamyek/career@main/resume/resume.pdf'
               icon={<FaFilePdf size={35} />}
             />
           </div>
