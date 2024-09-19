@@ -5,17 +5,17 @@ import IconLink from './ui/icon-link';
 
 export default function Home() {
   return (
-    <div className='flex justify-center gap-x-16'>
-      <div className='flex flex-col justify-center gap-y-16'>
-        <div className='flex flex-col gap-y-5'>
-          <div className='text-center text-5xl md:text-8xl'>Payam</div>
-          <div className='text-5xl md:text-8xl'>Yektamaram</div>
+    <div className='flex flex-wrap-reverse justify-center gap-5 md:flex-nowrap md:gap-16'>
+      <div className='flex flex-col justify-center gap-y-4 md:gap-y-16'>
+        <div className='flex justify-center gap-x-2 gap-y-5 md:flex-col'>
+          <div className='text-center text-3xl md:text-8xl'>Payam</div>
+          <div className='text-center text-3xl md:text-8xl'>Yektamaram</div>
         </div>
-        <div className='flex flex-col gap-y-5'>
-          <span className='text-center text-2xl md:text-4xl'>
+        <div className='flex flex-col gap-4 md:gap-5'>
+          <span className='text-md text-center md:text-4xl'>
             Full-stack Developer @ MPAC
           </span>
-          <span className='text-center text-2xl italic md:text-3xl'>
+          <span className='text-md text-center italic md:text-3xl'>
             University of Toronto Graduate
           </span>
           <div className='flex justify-center gap-x-5'>
@@ -38,15 +38,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-y-2'>
-        <Image
-          src='/payam.jpg'
-          width={400}
-          height={900}
-          alt='A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.'
-          className='rounded-xl shadow-lg shadow-teal-600/30 duration-200 ease-linear hover:scale-105'
-        />
-        <span className='text-md text-center italic'>
+      <div className='flex-col gap-y-2'>
+        <div className='object-fit relative flex h-80 w-60 md:h-[30rem] md:w-[22rem]'>
+          <Image
+            src='/payam.jpg'
+            fill
+            priority
+            alt='A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.'
+            className='rounded-xl shadow-lg shadow-teal-600/30 duration-200 ease-linear hover:scale-105'
+          />
+        </div>
+        <span className='text-md hidden text-center italic md:inline-block'>
           A happy Payam in the wild ...
         </span>
       </div>
