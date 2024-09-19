@@ -8,14 +8,14 @@ export default function Home() {
     <div className='flex justify-center gap-x-16'>
       <div className='flex flex-col justify-center gap-y-16'>
         <div className='flex flex-col gap-y-5'>
-          <div className='text-center text-8xl'>Payam</div>
-          <div className='text-8xl'>Yektamaram</div>
+          <div className='text-center text-5xl md:text-8xl'>Payam</div>
+          <div className='text-5xl md:text-8xl'>Yektamaram</div>
         </div>
         <div className='flex flex-col gap-y-5'>
-          <span className='text-center text-4xl'>
+          <span className='text-center text-2xl md:text-4xl'>
             Full-stack Developer @ MPAC
           </span>
-          <span className='text-center text-3xl italic'>
+          <span className='text-center text-2xl italic md:text-3xl'>
             University of Toronto Graduate
           </span>
           <div className='flex justify-center gap-x-5'>

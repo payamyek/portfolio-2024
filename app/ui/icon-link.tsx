@@ -11,7 +11,7 @@ export default function IconLink(props: Readonly<Props>): JSX.Element {
       href={props.href}
       rel='noopener noreferrer'
       target='_blank'
-      className='hover:border-c duration-200 ease-in hover:scale-110'
+      className='hover:border-c cursor-pointer duration-200 ease-in hover:scale-110'
     >
       {props.icon}
     </Link>
