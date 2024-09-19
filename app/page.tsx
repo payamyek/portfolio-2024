@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </div>
       <div className='flex-col gap-y-2'>
-        <div className='object-fit relative flex h-80 w-60 md:h-[30rem] md:w-[22rem]'>
+        <div className='object-fit relative flex h-96 w-72 md:h-[30rem] md:w-[22rem]'>
           <Image
             src='/payam.jpg'
             fill
