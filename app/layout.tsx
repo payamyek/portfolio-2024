@@ -21,7 +21,7 @@ export default function RootLayout({
       >
         <Navbar
           title='Experiences'
-          progress={24}
+          progress={0}
         />
         <div className='flex items-center justify-center'>{children}</div>
       </body>

@@ -21,15 +21,22 @@ export default function Overview() {
         </div>
       </div>
       <div className='flex flex-col justify-end md:justify-center md:gap-y-2'>
-        <div className='object-fit relative z-0 flex h-96 w-72 md:h-[30rem] md:w-[22rem]'>
-          <Image
-            src='/payam.jpg'
-            fill
-            priority
-            alt='A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.'
-            className='rounded-xl shadow-lg shadow-teal-600/30 duration-200 ease-linear hover:scale-105'
-          />
-        </div>
+        <Image
+          src='/payam.jpg'
+          priority
+          width={400}
+          height={800}
+          alt='A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.'
+          className='hidden rounded-xl shadow-lg shadow-teal-600/30 duration-200 ease-linear hover:scale-105 md:block'
+        />
+        <Image
+          src='/payam.jpg'
+          priority
+          width={300}
+          height={400}
+          alt='A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.'
+          className='rounded-xl shadow-lg shadow-teal-600/30 duration-200 ease-linear hover:scale-105 md:hidden'
+        />
         <span className='text-md hidden w-full text-center italic md:inline-block'>
           A happy Payam in the wild ...
         </span>
