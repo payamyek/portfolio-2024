@@ -21,7 +21,7 @@ export default function Overview() {
         </div>
       </div>
       <div className='flex flex-col justify-end md:justify-center md:gap-y-2'>
-        <div className='object-fit relative flex h-96 w-72 md:h-[30rem] md:w-[22rem]'>
+        <div className='object-fit relative z-0 flex h-96 w-72 md:h-[30rem] md:w-[22rem]'>
           <Image
             src='/payam.jpg'
             fill

@@ -16,6 +16,23 @@ const config: Config = {
       },
     },
   },
+  daisyui: {
+    themes: [
+      {
+        rustic: {
+          primary: '#D9D9D9',
+          secondary: '#CBC3e3',
+          accent: '#D0CAE0',
+          neutral: '#ffe4e6',
+          'base-100': '#2B2929',
+          info: '#d8b4fe',
+          success: '#f0abfc',
+          warning: '#c4b5fd',
+          error: '#ec4899',
+        },
+      },
+    ],
+  },
   plugins: [daisyui],
   safelist: [
     'basis-1/12',
@@ -32,4 +49,5 @@ const config: Config = {
     'basis-full',
   ],
 };
+
 export default config;

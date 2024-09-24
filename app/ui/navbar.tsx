@@ -17,7 +17,7 @@ export default function Navbar(props: Readonly<NavbarProps>): JSX.Element {
   if (!props.progress) return <></>;
 
   return (
-    <div className='sticky top-0 flex flex-col'>
+    <div className='sticky top-0 flex flex-col bg-base-100'>
       <div className='flex justify-between p-4 text-2xl'>
         <span>{props.title}</span>
         <IconGroup />
