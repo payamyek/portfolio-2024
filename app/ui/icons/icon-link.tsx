@@ -1,11 +1,11 @@
 import Link from 'next/link';
 
-interface Props {
+interface IconLinkProps {
   href: string;
   icon: JSX.Element;
 }
 
-export default function IconLink(props: Readonly<Props>): JSX.Element {
+export default function IconLink(props: Readonly<IconLinkProps>): JSX.Element {
   return (
     <Link
       href={props.href}
