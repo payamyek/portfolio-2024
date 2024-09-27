@@ -4,7 +4,7 @@ import IconGroup from './icons/icon-group';
 
 export default function Overview() {
   return (
-    <div className='flex min-h-screen flex-wrap-reverse justify-center md:flex-nowrap md:gap-16'>
+    <div className='flex min-h-dvh flex-wrap-reverse justify-center md:flex-nowrap md:gap-16'>
       <div className='flex flex-col justify-center md:gap-y-16'>
         <div className='flex justify-center gap-x-2 md:flex-col md:gap-y-5'>
           <div className='text-center text-3xl md:text-8xl'>Payam</div>

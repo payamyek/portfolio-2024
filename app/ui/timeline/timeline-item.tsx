@@ -24,7 +24,7 @@ export default function TimelineItem(props: Readonly<TimelineItemInterface>) {
         </svg>
       </div>
       <div
-        className={clsx('mb-10', {
+        className={clsx('md:mb-10', {
           'timeline-start md:text-end': props.position === 'left',
           'timeline-end': props.position === 'right',
         })}
@@ -38,7 +38,7 @@ export default function TimelineItem(props: Readonly<TimelineItemInterface>) {
         </div>
         {props.jobDescription}
       </div>
-      <hr className='' />
+      <hr />
     </li>
   );
 }
