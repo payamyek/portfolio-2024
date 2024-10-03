@@ -5,4 +5,5 @@ export interface TimelineItemInterface {
   jobTitle: string;
   company: string;
   position: 'left' | 'right';
+  animate?: boolean;
 }

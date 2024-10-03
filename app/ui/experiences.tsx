@@ -35,13 +35,14 @@ const experiences: Array<TimelineItemInterface> = [
     `,
     company: 'MPAC',
     position: 'left',
+    animate: true,
   },
 ];
 
 export default function Experiences() {
   return (
     <div className='flex flex-col'>
-      <h1 className='mb-5 text-4xl'>Experiences</h1>
+      <h1 className='mb-5 text-4xl md:mb-16'>Experiences</h1>
       <Timeline data={experiences} />
     </div>
   );

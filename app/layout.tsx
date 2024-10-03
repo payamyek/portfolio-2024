@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${spaceMono.className} flex min-h-dvh w-screen flex-col antialiased md:px-24`}
+        className={`${spaceMono.className} mx-auto flex min-h-dvh w-3/5 flex-col self-center antialiased md:px-24`}
       >
         <Navbar
           title='Experiences'
