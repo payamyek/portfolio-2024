@@ -19,8 +19,8 @@ export default function TimelineItem(props: Readonly<TimelineItemInterface>) {
       </div>
       <div
         className={clsx('md:mb-10', {
-          'timeline-start md:text-end': props.position === 'left',
-          'timeline-end': props.position === 'right',
+          'timeline-start mr-5 md:text-end': props.position === 'left',
+          'timeline-end ml-5': props.position === 'right',
         })}
       >
         <time className='font-mono italic'>

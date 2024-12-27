@@ -1,5 +1,7 @@
 import IconGroup from './icons/icon-group';
 
+import type { JSX } from 'react';
+
 interface NavbarProps {
   title: string;
   progress: number /* number between 1-100 */;
