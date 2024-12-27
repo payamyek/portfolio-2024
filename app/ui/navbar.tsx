@@ -1,6 +1,6 @@
-import IconGroup from './icons/icon-group';
-
 import type { JSX } from 'react';
+
+import IconGroup from './icons/icon-group';
 
 interface NavbarProps {
   title: string;

@@ -27,7 +27,7 @@ export default function Overview() {
           width={400}
           height={800}
           alt='A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.'
-          className='hidden rounded-xl shadow-lg shadow-teal-600/30 duration-200 ease-linear hover:scale-105 md:block'
+          className='hidden rounded-xl shadow-lg shadow-teal-600/30 duration-500 ease-out hover:scale-105 hover:duration-300 md:block'
         />
         <Image
           src='/payam.jpg'

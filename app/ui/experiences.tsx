@@ -8,7 +8,7 @@ const experiences: Array<TimelineItemInterface> = [
     jobTitle: 'Junior Systems Developer',
     jobDescription: `
       I made an application from scratch! I wanted to call it something cool but we decided on the "Lookup Service", well that's what it did anyways.
-      Building a backend was cool but learning React.js was even cooler!
+      Building a REST API was cool but learning React.js was even cooler!
     `,
     company: 'MPAC',
     position: 'left',
@@ -19,19 +19,18 @@ const experiences: Array<TimelineItemInterface> = [
     jobTitle: 'Systems Developer',
     jobDescription: `
       I returned to find myself in the midst of a colossal project.
-      I became the lead on a tablet project for Ireland. I took some of the best tools; Electron, React, Javascript, and Python to whip up a marvelous gadget.
-      After many hard months of work, we were able to put a smile on our Irish friends.
-    `,
+      I became the lead on the tablet project for Ireland. I took some of the best tools; Electron, React, and Python to whip up a marvelous application which put a smile on our Irish colleagues.`,
     company: 'MPAC',
     position: 'right',
   },
   {
     startDate: new Date(2023, 7),
-    jobTitle: 'Fullstack Developer (I.T Manager)',
+    jobTitle: 'Fullstack Developer',
     jobDescription: `
-      Manager??? Do not fret. I still code but was rewarded for all of my hard work.
-      Then I needed to deliver a stellar prototype system to procure Winnipeg as our new client on a multi-million dollar
-      contract. We did it!! So now I'm continuously modifying our code-bases to align with needs of our friends in Winnipeg.
+      It was time to participate in a company-wide effort to procure the city of Winnipeg as our second commercial client!
+      Our team put on a spectacular demonstration which procured the city of Winnipeg on a multi-year multi-million dollar contract.
+
+     I now found myself in charge of the frontend and backend systems for our friends in Winnipeg :)
     `,
     company: 'MPAC',
     position: 'left',

@@ -1,6 +1,6 @@
-import Link from 'next/link';
-
 import type { JSX } from 'react';
+
+import Link from 'next/link';
 
 interface IconLinkProps {
   href: string;
