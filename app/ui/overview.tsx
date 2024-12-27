@@ -8,18 +8,18 @@ const IMAGE_ALT =
 export default function Overview() {
   return (
     <div className='flex min-h-dvh flex-wrap-reverse justify-center lg:flex-nowrap lg:gap-16'>
-      <div className='flex flex-col justify-center text-center lg:gap-y-16'>
-        <div className='flex justify-center gap-x-2 text-3xl md:flex-col md:gap-y-5 md:text-6xl xl:text-8xl'>
+      <div className='flex flex-col justify-evenly text-center lg:justify-center lg:gap-y-16'>
+        <div className='flex justify-center gap-x-2 text-3xl md:flex-col md:text-6xl lg:gap-y-5 xl:text-8xl'>
           <p>Payam</p>
           <p>Yektamaram</p>
         </div>
         <div className='text-md flex flex-col gap-4 md:gap-5'>
           <p className='md:text-4xl'>Fullstack Developer @ MPAC</p>
-          <p className='italic md:mb-16 md:text-3xl'>UofT Alumni</p>
+          <p className='mb-6 italic md:text-3xl lg:mb-16'>UofT Alumni</p>
           <IconGroup />
         </div>
       </div>
-      <div className='flex shrink-0 flex-col justify-end md:justify-center md:gap-y-2'>
+      <div className='flex flex-col justify-end md:gap-y-2 lg:justify-center'>
         <Image
           src='/payam.jpg'
           priority
@@ -36,7 +36,7 @@ export default function Overview() {
           alt={IMAGE_ALT}
           className='rounded-xl shadow-lg shadow-teal-600/30 md:hidden'
         />
-        <span className='text-md hidden w-full text-center italic md:inline-block'>
+        <span className='hidden w-full text-center italic lg:inline-block'>
           A happy Payam in the wild ...
         </span>
       </div>

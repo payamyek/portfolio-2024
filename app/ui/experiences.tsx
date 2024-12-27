@@ -1,4 +1,3 @@
-import Timeline from './timeline/timeline';
 import { TimelineItemInterface } from './timeline/types';
 
 const experiences: Array<TimelineItemInterface> = [
@@ -41,8 +40,14 @@ const experiences: Array<TimelineItemInterface> = [
 export default function Experiences() {
   return (
     <div className='flex flex-col'>
-      <h1 className='mb-5 text-4xl md:mb-16'>Experiences</h1>
-      <Timeline data={experiences} />
+      <h1 className='mb-4 text-4xl'>Experiences</h1>
+      <hr />
+      <div className='card glass mt-4 w-full shadow-xl'>
+        <div className='card-body'>
+          <h2 className='card-title'>{experiences[0].jobTitle}</h2>
+          <p>{experiences[0].jobDescription}</p>
+        </div>
+      </div>
     </div>
   );
 }
