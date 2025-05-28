@@ -1,42 +1,88 @@
+import React from 'react';
+import {
+  SiPython,
+  SiPandas,
+  SiJavascript,
+  SiAngular,
+  SiDocker,
+  SiElectron,
+  SiNumpy,
+  SiModin,
+  SiSpringboot,
+  SiTypescript,
+  SiReact,
+  SiBootstrap,
+} from 'react-icons/si';
+
 interface ExperienceInterface {
   startDate: Date;
   endDate: Date;
   jobDescription: string;
   jobTitle: string;
   company: string;
+  technologies?: React.JSX.Element[];
 }
 
 const experiences: Array<ExperienceInterface> = [
   {
     startDate: new Date(2023, 7),
-    endDate: new Date(2025, 5),
+    endDate: new Date(2025, 4),
     jobTitle: 'Fullstack Developer & I.T Manager',
     jobDescription: `
-      It was time to participate in a company-wide effort to procure the city of Winnipeg as our second commercial client!
-      Our team put on a spectacular demonstration which procured the city of Winnipeg on a multi-year multi-million dollar contract.
+      I participated in a company-wide effort to procure the city of Winnipeg as our second commercial client!
+      Our team put on a spectacular demonstration which procured the city of Winnipeg on a multi-million dollar contract.
+      This in fact became the launching point for our new Commercial division as otherwise it would not have existed without it.
 
      I then found myself in charge of the frontend and backend systems for our friends in Winnipeg :)
     `,
     company: 'Municipal Property Assessment Corporation',
+    technologies: [
+      <SiPython key='python' />,
+      <SiPandas key='pandas' />,
+      <SiJavascript key='javascript' />,
+      <SiAngular key='angular' />,
+      <SiDocker key='docker' />,
+      <SiElectron key='electron' />,
+      <SiNumpy key='numpy' />,
+      <SiModin key='modin' />,
+      <SiSpringboot key='springboot' />,
+      <SiTypescript key='typescript' />,
+    ],
   },
   {
     startDate: new Date(2022, 8),
     endDate: new Date(2023, 7),
     jobTitle: 'Systems Developer',
     jobDescription: `
-      I returned to find myself in the midst of a colossal project.
-      I became the lead on the tablet project for Ireland. I took some of the best tools; Electron, React, and Python to whip up a marvelous application which put a smile on our Irish colleagues.`,
+      I found myself in the midst of a colossal project.
+      I was the lead on the cross-platform tablet project for Ireland. I took some of the best tools in the shed; Electron, React, and Python to whip up a marvelous application which put a smile on our Irish colleagues.`,
     company: 'Municipal Property Assessment Corporation',
+    technologies: [
+      <SiPython key='python' />,
+      <SiReact key='react' />,
+      <SiJavascript key='javascript' />,
+      <SiDocker key='docker' />,
+      <SiElectron key='electron' />,
+      <SiSpringboot key='springboot' />,
+    ],
   },
   {
     startDate: new Date(2020, 0),
     endDate: new Date(2020, 11),
     jobTitle: 'Junior Systems Developer',
     jobDescription: `
-      I made an application from scratch! I wanted to call it something cool but we decided on the "Lookup Service", well that's what it did anyways.
+      In my first job, I made an full-stack application from scratch! I wanted to call it something cool but we decided on the "Lookup Service", well that's what it did anyways.
       Building a REST API was cool but learning React.js was even cooler!
     `,
     company: 'Municipal Property Assessment Corporation',
+    technologies: [
+      <SiPython key='python' />,
+      <SiReact key='react' />,
+      <SiJavascript key='javascript' />,
+      <SiBootstrap key='bootstrap' />,
+      <SiDocker key='docker' />,
+      <SiSpringboot key='springboot' />,
+    ],
   },
 ];
 
@@ -52,10 +98,13 @@ export default function Experiences() {
             <h2 className='card-title'>{it.jobTitle}</h2>
             <h3 className='italic'> {it.company} </h3>
             <h4>
-              {it.startDate.toLocaleDateString('en-US')} -{' '}
-              {it.endDate.toLocaleDateString('en-US')}
+              {it.startDate.toLocaleString('default', { month: 'long' })}{' '}
+              {it.startDate.getFullYear()} -{' '}
+              {it.endDate.toLocaleString('default', { month: 'long' })}{' '}
+              {it.endDate.getFullYear()}
             </h4>
             <p>{it.jobDescription}</p>
+            <div className='mt-2 flex gap-x-4 text-3xl'>{it.technologies}</div>
           </div>
         </div>
       ))}
