@@ -9,12 +9,12 @@ export default function Overview() {
   return (
     <div className='flex min-h-dvh flex-wrap-reverse justify-center lg:flex-nowrap lg:gap-16'>
       <div className='flex flex-col justify-evenly text-center lg:justify-center lg:gap-y-16'>
-        <div className='flex justify-center gap-x-2 text-3xl md:flex-col md:text-6xl lg:gap-y-5 xl:text-8xl'>
+        <div className='flex justify-center gap-x-2 text-3xl md:flex-col md:text-5xl lg:gap-y-5 xl:text-8xl'>
           <p>Payam</p>
           <p>Yektamaram</p>
         </div>
         <div className='text-md flex flex-col gap-4 md:gap-5'>
-          <p className='md:text-4xl'>Fullstack Developer @ MPAC</p>
+          <p className='md:text-3xl'>Fullstack Developer @ MPAC</p>
           <p className='mb-6 italic md:text-3xl lg:mb-16'>UofT Alumni</p>
           <IconGroup />
         </div>

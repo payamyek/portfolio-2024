@@ -42,8 +42,8 @@ export default function Experiences() {
     <div className='flex flex-col'>
       <h1 className='mb-4 text-4xl'>Experiences</h1>
       <hr />
-      <div className='card glass mt-4 w-full shadow-xl'>
-        <div className='card-body'>
+      <div className='card mt-4 w-full'>
+        <div className='card-body px-0'>
           <h2 className='card-title'>{experiences[0].jobTitle}</h2>
           <p>{experiences[0].jobDescription}</p>
         </div>
