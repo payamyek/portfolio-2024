@@ -26,7 +26,7 @@ export default function Overview() {
       </div>
       <div className='flex flex-col justify-end md:gap-y-2 lg:justify-center'>
         <Image
-          src='/payam.jpg'
+          src='/headshot.jpg'
           priority
           width={400}
           height={800}
@@ -34,7 +34,7 @@ export default function Overview() {
           className='hidden rounded-xl shadow-lg shadow-teal-600/30 duration-500 ease-out hover:scale-105 hover:duration-300 md:block'
         />
         <Image
-          src='/payam.jpg'
+          src='/headshot.jpg'
           priority
           width={300}
           height={400}
