@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { MdLocationPin } from 'react-icons/md';
 
 import IconGroup from './icons/icon-group';
 
@@ -15,7 +16,12 @@ export default function Overview() {
         </div>
         <div className='text-md flex flex-col gap-4 md:gap-5'>
           <p className='md:text-3xl'>Fullstack Developer @ MPAC</p>
-          <p className='mb-6 italic md:text-3xl lg:mb-16'>UofT Alumni</p>
+          <p className='italic md:text-3xl'>UofT Alumni</p>
+          <div className='align- mb-6 flex items-center justify-center gap-2 md:text-xl lg:mb-16'>
+            <MdLocationPin />
+            Toronto, Canada
+          </div>
+
           <IconGroup />
         </div>
       </div>
