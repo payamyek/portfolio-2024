@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${spaceMono.className} mx-auto flex min-h-dvh w-3/5 flex-col self-center antialiased`}
+        className={`${spaceMono.className} mx-auto flex min-h-dvh flex-col self-center antialiased lg:w-3/5`}
       >
         <Navbar />
         <div className='flex items-center justify-center'>{children}</div>

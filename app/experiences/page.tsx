@@ -104,7 +104,9 @@ export default function Experiences() {
               {it.endDate.getFullYear()}
             </h4>
             <p>{it.jobDescription}</p>
-            <div className='mt-2 flex gap-x-4 text-3xl'>{it.technologies}</div>
+            <div className='mt-4 flex flex-wrap gap-4 text-3xl'>
+              {it.technologies}
+            </div>
           </div>
         </div>
       ))}
