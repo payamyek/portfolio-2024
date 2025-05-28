@@ -18,7 +18,7 @@ const DesktopNavbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className='navbar hidden bg-base-100 shadow-sm lg:flex'>
+    <div className='navbar bg-base-100 hidden shadow-xs lg:flex'>
       <div className='flex-1'>
         <Link
           href='/'
@@ -61,7 +61,7 @@ const DesktopNavbar = () => {
 
 const MobileNavbar = () => {
   return (
-    <div className='navbar bg-base-100 shadow-sm lg:hidden'>
+    <div className='navbar bg-base-100 shadow-xs lg:hidden'>
       <div className='navbar-start'>
         <div className='dropdown'>
           <div
@@ -87,7 +87,7 @@ const MobileNavbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className='menu dropdown-content menu-sm z-10 mt-3 w-52 rounded-box bg-base-100 p-2 shadow'
+            className='menu dropdown-content menu-sm rounded-box bg-base-100 z-10 mt-3 w-52 p-2 shadow-sm'
           >
             <li>
               <Link href='/experiences'>Experiences</Link>
