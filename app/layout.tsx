@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 
+import { Analytics } from '@vercel/analytics/next';
+
 import './globals.css';
 import { spaceMono } from './ui/fonts';
 import Navbar from './ui/navbar';
@@ -24,6 +26,7 @@ export default function RootLayout({
           progress={0}
         />
         <div className='flex items-center justify-center'>{children}</div>
+        <Analytics />
       </body>
     </html>
   );
