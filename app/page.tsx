@@ -8,7 +8,7 @@ const IMAGE_ALT =
 
 export default function Home() {
   return (
-    <div className='flex min-h-dvh flex-col justify-center'>
+    <div className='flex flex-col justify-center'>
       <div className='flex flex-wrap-reverse lg:flex-nowrap lg:gap-16'>
         <div className='flex flex-col justify-evenly text-center lg:justify-center lg:gap-y-16'>
           <div className='flex justify-center gap-x-2 text-3xl md:flex-col md:text-5xl lg:gap-y-5 xl:text-8xl'>
