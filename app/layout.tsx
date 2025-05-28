@@ -23,9 +23,7 @@ export default function RootLayout({
       >
         <Analytics />
         <Navbar />
-        <div className='my-auto flex items-center justify-center'>
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

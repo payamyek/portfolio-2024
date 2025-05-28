@@ -8,7 +8,7 @@ const IMAGE_ALT =
 
 export default function Home() {
   return (
-    <div className='flex flex-col-reverse gap-6 lg:flex-row lg:gap-16'>
+    <div className='my-auto flex flex-col-reverse gap-6 lg:flex-row lg:gap-16'>
       <div className='flex flex-col justify-evenly text-center lg:gap-y-16'>
         <div className='flex justify-center gap-x-2 text-3xl md:flex-col md:text-5xl lg:gap-y-5 xl:text-8xl'>
           <p>Payam</p>
@@ -24,7 +24,7 @@ export default function Home() {
           <IconGroup />
         </div>
       </div>
-      <div className='flex flex-col justify-end md:gap-y-2 lg:justify-center'>
+      <div className='flex justify-center md:gap-y-2 lg:flex-col'>
         <Image
           src='/headshot.jpg'
           priority
