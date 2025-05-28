@@ -21,10 +21,7 @@ export default function RootLayout({
       <body
         className={`${spaceMono.className} mx-auto flex min-h-dvh w-3/5 flex-col self-center antialiased`}
       >
-        <Navbar
-          title='Experiences'
-          progress={0}
-        />
+        <Navbar />
         <div className='flex items-center justify-center'>{children}</div>
         <Analytics />
       </body>
