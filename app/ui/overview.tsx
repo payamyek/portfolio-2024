@@ -21,7 +21,6 @@ export default function Overview() {
             <MdLocationPin />
             Toronto, Canada
           </div>
-
           <IconGroup />
         </div>
       </div>
