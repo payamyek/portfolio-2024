@@ -19,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${spaceMono.className} mx-auto flex flex-col antialiased lg:w-3/5`}
+        className={`${spaceMono.className} mx-auto flex min-h-dvh flex-col antialiased lg:w-3/5`}
       >
         <Analytics />
         <Navbar />
-        <div className='flex items-center justify-center'>{children}</div>
+        <div className='my-auto flex items-center justify-center'>
+          {children}
+        </div>
       </body>
     </html>
   );
