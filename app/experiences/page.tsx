@@ -29,11 +29,10 @@ const experiences: Array<ExperienceInterface> = [
     endDate: new Date(2025, 4),
     jobTitle: 'Fullstack Developer & I.T Manager',
     jobDescription: `
-      I participated in a company-wide effort to procure the city of Winnipeg as our second commercial client!
-      Our team put on a spectacular demonstration which procured the city of Winnipeg on a multi-million dollar contract.
-      This in fact became the launching point for our new Commercial division as otherwise it would not have existed without it.
-
-     I then found myself in charge of the frontend and backend systems for our friends in Winnipeg :)
+     I participated in a company-wide initiative to secure the City of Winnipeg as our second commercial client!
+     Our team delivered a remarkable demonstration that led to a multi-million dollar contract with the city.
+     This deal became the catalyst for launching our new Commercial division, which wouldn't have existed without it.
+     As a result, I found myself overseeing both the frontend and backend systems for our partners in Winnipeg. :)
     `,
     company: 'Municipal Property Assessment Corporation',
     technologies: [
