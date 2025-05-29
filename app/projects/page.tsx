@@ -1,4 +1,5 @@
 import { CodeBlock } from '@/components/ui/code-block';
+import Image from 'next/image';
 import {
   SiPython,
   SiPytest,
@@ -8,6 +9,10 @@ import {
   SiSqlalchemy,
   SiDocker,
   SiPoetry,
+  SiReact,
+  SiJavascript,
+  SiTypescript,
+  SiVercel,
 } from 'react-icons/si';
 
 const Rook = () => {
@@ -288,11 +293,61 @@ const Oracle = () => {
   );
 };
 
+const Wordle = () => {
+  return (
+    <div className='card'>
+      <div className='card-body'>
+        <h2 className='card-title'>
+          Wordle -{' '}
+          <a
+            href='https://github.com/payamyek/wordle'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='link'
+          >
+            Project
+          </a>{' '}
+        </h2>
+        <p>
+          A straight-to-the-point no funny business implementation of Wordle.
+        </p>
+        <div className='mockup-phone border-primary mt-2 w-fit'>
+          <div className='mockup-phone-display'>
+            <img
+              alt='wallpaper'
+              src='/wordle.png'
+            />
+          </div>
+        </div>
+        <div className='mt-4 flex flex-wrap gap-4 text-3xl'>
+          <div className='badge badge-info'>
+            <SiReact />
+            React
+          </div>
+          <div className='badge badge-info'>
+            <SiJavascript />
+            JavaScript
+          </div>
+          <div className='badge badge-info'>
+            <SiTypescript />
+            TypeScript
+          </div>
+          <div className='badge badge-info'>
+            <SiVercel />
+            Vercel
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   return (
     <div className='flex flex-col'>
       <Rook />
       <Oracle />
+      <Wordle />
     </div>
   );
 }
