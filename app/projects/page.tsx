@@ -1,5 +1,4 @@
 import { CodeBlock } from '@/components/ui/code-block';
-import Image from 'next/image';
 import {
   SiPython,
   SiPytest,
