@@ -12,6 +12,8 @@ import {
   SiJavascript,
   SiTypescript,
   SiVercel,
+  SiTailwindcss,
+  SiDaisyui,
 } from 'react-icons/si';
 
 const Rook = () => {
@@ -330,6 +332,14 @@ const Wordle = () => {
           <div className='badge badge-info'>
             <SiTypescript />
             TypeScript
+          </div>
+          <div className='badge badge-info'>
+            <SiTailwindcss />
+            Tailwind CSS
+          </div>
+          <div className='badge badge-info'>
+            <SiDaisyui />
+            DaisyUI
           </div>
           <div className='badge badge-info'>
             <SiVercel />

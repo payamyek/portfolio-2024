@@ -27,7 +27,7 @@ const experiences: Array<ExperienceInterface> = [
   {
     startDate: new Date(2023, 7),
     endDate: new Date(2025, 4),
-    jobTitle: 'Fullstack Developer & I.T Manager',
+    jobTitle: 'Fullstack Developer',
     jobDescription: `
      I participated in a company-wide initiative to secure the City of Winnipeg as our second commercial client!
      Our team delivered a remarkable demonstration that led to a multi-million dollar contract with the city.
