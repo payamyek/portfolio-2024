@@ -17,6 +17,8 @@ export default function Navbar(): JSX.Element {
 const DesktopNavbar = () => {
   const pathname = usePathname();
 
+  console.log(pathname);
+
   return (
     <div className='navbar bg-base-100 hidden shadow-xs lg:flex'>
       <div className='flex-1'>
@@ -32,7 +34,7 @@ const DesktopNavbar = () => {
           <li>
             <Link
               href='/'
-              className={pathname == '/' ? 'active' : ''}
+              className={pathname === '/' ? 'active' : ''}
             >
               Home
             </Link>
@@ -40,7 +42,7 @@ const DesktopNavbar = () => {
           <li>
             <Link
               href='/experiences'
-              className={pathname == '/experiences' ? 'active' : ''}
+              className={pathname === '/experiences' ? 'active' : ''}
             >
               Experiences
             </Link>
@@ -48,9 +50,17 @@ const DesktopNavbar = () => {
           <li>
             <Link
               href='/projects'
-              className={pathname == '/projects' ? 'active' : ''}
+              className={pathname === '/projects' ? 'active' : ''}
             >
               Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              href='/bookshelf'
+              className={pathname === '/bookshelf' ? 'active' : ''}
+            >
+              Bookshelf
             </Link>
           </li>
         </ul>
