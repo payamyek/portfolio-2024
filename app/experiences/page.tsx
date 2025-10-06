@@ -12,11 +12,13 @@ import {
   SiTypescript,
   SiReact,
   SiBootstrap,
+  SiRubyonrails,
+  SiRuby,
 } from 'react-icons/si';
 
 interface ExperienceInterface {
   startDate: Date;
-  endDate: Date;
+  endDate?: Date;
   jobDescription: string;
   jobTitle: string;
   company: string;
@@ -24,6 +26,18 @@ interface ExperienceInterface {
 }
 
 const experiences: Array<ExperienceInterface> = [
+  {
+    startDate: new Date(2025, 7),
+    jobTitle: 'Software Engineer',
+    jobDescription: `A world where React and Ruby on Rails intersect in the most delighted manner. Having the time of my life coding away ...
+    `,
+    company: 'StackAdapt',
+    technologies: [
+      <SiRuby key='ruby' />,
+      <SiRubyonrails key='rails' />,
+      <SiReact key='react' />,
+    ],
+  },
   {
     startDate: new Date(2023, 7),
     endDate: new Date(2025, 4),
@@ -96,12 +110,19 @@ export default function Experiences() {
           <div className='card-body'>
             <h2 className='card-title'>{it.jobTitle}</h2>
             <h3 className='italic'> {it.company} </h3>
-            <h4>
-              {it.startDate.toLocaleString('default', { month: 'long' })}{' '}
-              {it.startDate.getFullYear()} -{' '}
-              {it.endDate.toLocaleString('default', { month: 'long' })}{' '}
-              {it.endDate.getFullYear()}
-            </h4>
+            {it?.endDate ? (
+              <h4>
+                {it.startDate.toLocaleString('default', { month: 'long' })}{' '}
+                {it.startDate.getFullYear()} -{' '}
+                {it.endDate.toLocaleString('default', { month: 'long' })}{' '}
+                {it.endDate.getFullYear()}
+              </h4>
+            ) : (
+              <h4>
+                {it.startDate.toLocaleString('default', { month: 'long' })}{' '}
+                {it.startDate.getFullYear()} - Present
+              </h4>
+            )}
             <p>{it.jobDescription}</p>
             <div className='mt-4 flex flex-wrap gap-4 text-3xl'>
               {it.technologies}
