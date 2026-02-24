@@ -27,3 +27,43 @@
 @utility text-balance {
   text-wrap: balance;
 }
+
+@layer base {
+  /* Dot-grid background — adapts to light/dark via DaisyUI's base-content color */
+  body {
+    background-image: radial-gradient(
+      color-mix(in oklch, var(--color-base-content) 10%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 28px 28px;
+  }
+
+  /* Teal text selection */
+  ::selection {
+    background-color: oklch(from var(--color-primary) l c h / 0.25);
+  }
+
+  /* Thin themed scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: color-mix(
+      in oklch,
+      var(--color-base-content) 20%,
+      transparent
+    );
+    border-radius: 9999px;
+  }
+
+  /* Respect reduced motion — kill cursor trail, pings, typewriter */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
