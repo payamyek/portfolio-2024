@@ -7,6 +7,7 @@ import CursorTrail from './ui/cursor-trail';
 import { spaceMono } from './ui/fonts';
 import Footer from './ui/footer';
 import Navbar from './ui/navbar';
+import QueryProvider from './ui/query-provider';
 import ScrollToTop from './ui/scroll-to-top';
 
 export const metadata: Metadata = {
@@ -57,12 +58,14 @@ export default function RootLayout({
             __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
           }}
         />
-        <CursorTrail />
-        <Analytics />
-        <Navbar />
-        <main className='flex flex-1 flex-col'>{children}</main>
-        <ScrollToTop />
-        <Footer />
+        <QueryProvider>
+          <CursorTrail />
+          <Analytics />
+          <Navbar />
+          <main className='flex flex-1 flex-col'>{children}</main>
+          <ScrollToTop />
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

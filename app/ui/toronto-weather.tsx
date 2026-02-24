@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 const WMO_ICONS: Record<number, string> = {
   0: '☀️',
@@ -29,24 +29,25 @@ const WMO_ICONS: Record<number, string> = {
   99: '⛈️',
 };
 
+async function fetchWeather() {
+  const res = await fetch(
+    'https://api.open-meteo.com/v1/forecast?latitude=43.7001&longitude=-79.4163&current=temperature_2m,weather_code&temperature_unit=celsius&timezone=America%2FToronto',
+  );
+  if (!res.ok) throw new Error('Weather fetch failed');
+  const data = await res.json();
+  const { temperature_2m, weather_code } = data.current;
+  return `${WMO_ICONS[weather_code] ?? '🌡️'} ${Math.round(temperature_2m)}°C`;
+}
+
 export default function TorontoWeather() {
-  const [display, setDisplay] = useState('');
+  const { data } = useQuery({
+    queryKey: ['toronto-weather'],
+    queryFn: fetchWeather,
+    staleTime: 30 * 60 * 1000, // consider fresh for 30 minutes
+    retry: 1,
+  });
 
-  useEffect(() => {
-    fetch(
-      'https://api.open-meteo.com/v1/forecast?latitude=43.7001&longitude=-79.4163&current=temperature_2m,weather_code&temperature_unit=celsius&timezone=America%2FToronto',
-    )
-      .then((r) => r.json())
-      .then((data) => {
-        const { temperature_2m, weather_code } = data.current;
-        const icon = WMO_ICONS[weather_code] ?? '🌡️';
-        setDisplay(`${icon} ${Math.round(temperature_2m)}°C`);
-      })
-      .catch(() => {});
-  }, []);
+  if (!data) return <span className='skeleton inline-block h-4 w-14 rounded' />;
 
-  if (!display)
-    return <span className='skeleton inline-block h-4 w-14 rounded' />;
-
-  return <span className='text-sm opacity-70'>{display}</span>;
+  return <span className='text-sm opacity-70'>{data}</span>;
 }
