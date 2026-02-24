@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MdLocationPin } from 'react-icons/md';
 
 import IconGroup from './ui/icons/icon-group';
+import TypewriterText from './ui/typewriter-text';
 
 const IMAGE_ALT =
   'A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.';
@@ -19,10 +20,7 @@ export default function Home() {
           </div>
 
           <div className='flex flex-col gap-2'>
-            <p className='text-lg md:text-2xl'>
-              Software Engineer @ StackAdapt
-            </p>
-            <p className='text-md italic opacity-70 md:text-xl'>UofT Alumni</p>
+            <TypewriterText />
             <div className='flex items-center justify-center gap-1 opacity-60 md:text-lg lg:justify-start'>
               <MdLocationPin />
               <span>Toronto, Canada</span>
