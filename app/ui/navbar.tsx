@@ -5,6 +5,8 @@ import type { JSX } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import ThemeToggle from './theme-toggle';
+
 export default function Navbar(): JSX.Element {
   return (
     <>
@@ -27,7 +29,7 @@ const DesktopNavbar = () => {
           Payam Y.
         </Link>
       </div>
-      <div className='flex-none'>
+      <div className='flex flex-none items-center gap-2'>
         <ul className='menu menu-horizontal px-1'>
           <li>
             <Link
@@ -70,6 +72,7 @@ const DesktopNavbar = () => {
             </Link>
           </li>
         </ul>
+        <ThemeToggle />
       </div>
     </div>
   );
@@ -130,7 +133,8 @@ const MobileNavbar = () => {
           </ul>
         </div>
       </div>
-      <div className='navbar-end'>
+      <div className='navbar-end flex items-center gap-2'>
+        <ThemeToggle />
         <Link
           href='/'
           className='btn btn-ghost text-xl'

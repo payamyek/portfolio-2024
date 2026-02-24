@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { Analytics } from '@vercel/analytics/next';
+import Script from 'next/script';
 
 import './globals.css';
 import { spaceMono } from './ui/fonts';
@@ -39,6 +40,16 @@ export default function RootLayout({
         rel='manifest'
         href='/site.webmanifest'
       />
+      <Script
+        id='theme-init'
+        strategy='beforeInteractive'
+      >{`
+        try {
+          var t = localStorage.getItem('theme') ||
+            (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', t);
+        } catch(e) {}
+      `}</Script>
       <body
         className={`${spaceMono.className} mx-auto flex min-h-dvh flex-col antialiased lg:w-3/5`}
       >
