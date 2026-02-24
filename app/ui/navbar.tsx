@@ -105,10 +105,16 @@ const MobileNavbar = () => {
             className='menu dropdown-content menu-sm rounded-box bg-base-100 z-10 mt-3 w-52 p-2 shadow-sm'
           >
             <li onClick={handleClick}>
+              <Link href='/'>Home</Link>
+            </li>
+            <li onClick={handleClick}>
               <Link href='/experiences'>Experiences</Link>
             </li>
             <li onClick={handleClick}>
               <Link href='/projects'>Projects</Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link href='/bookshelf'>Bookshelf</Link>
             </li>
           </ul>
         </div>
