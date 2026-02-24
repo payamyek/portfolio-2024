@@ -58,6 +58,39 @@ export default function RootLayout({
             __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
           }}
         />
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Payam Yektamaram',
+              url: 'https://payamyek.com',
+              jobTitle: 'Software Engineer',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'StackAdapt',
+              },
+              sameAs: [
+                'https://github.com/payamyek',
+                'https://www.linkedin.com/in/payamyek/',
+              ],
+              alumniOf: {
+                '@type': 'CollegeOrUniversity',
+                name: 'University of Toronto',
+              },
+              knowsAbout: [
+                'React',
+                'TypeScript',
+                'Python',
+                'Ruby on Rails',
+                'Docker',
+                'Machine Learning',
+                'Chess Engines',
+              ],
+            }),
+          }}
+        />
         <QueryProvider>
           <CursorTrail />
           <Analytics />
