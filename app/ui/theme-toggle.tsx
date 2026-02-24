@@ -22,9 +22,11 @@ export default function ThemeToggle() {
         type='checkbox'
         className='theme-controller'
         value='dark'
-        onChange={(e) =>
-          localStorage.setItem('theme', e.target.checked ? 'dark' : 'light')
-        }
+        onChange={(e) => {
+          const theme = e.target.checked ? 'dark' : 'light';
+          localStorage.setItem('theme', theme);
+          document.documentElement.setAttribute('data-theme', theme);
+        }}
         aria-label='Toggle dark mode'
       />
       <Moon
