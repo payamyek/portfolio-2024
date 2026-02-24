@@ -1,6 +1,5 @@
 import { FaFilePdf, FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa';
 
-import CarbonBadge from './carbon-badge';
 import IconLink from './icons/icon-link';
 import TorontoClock from './toronto-clock';
 import VisitorCount from './visitor-count';
@@ -43,7 +42,6 @@ export default function Footer() {
         <p className='text-xs opacity-40'>
           © {year} Payam Yektamaram · Last updated {LAST_UPDATED}
         </p>
-        <CarbonBadge />
       </div>
     </footer>
   );
