@@ -2,6 +2,7 @@ import { FaFilePdf, FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa';
 
 import IconLink from './icons/icon-link';
 import TorontoClock from './toronto-clock';
+import VisitorCount from './visitor-count';
 
 // Update this when you ship notable changes
 const LAST_UPDATED = 'February 2026';
@@ -34,9 +35,12 @@ export default function Footer() {
             icon={<FaFilePdf />}
           />
         </div>
-        <TorontoClock />
+        <div className='flex items-center gap-4'>
+          <TorontoClock />
+          <VisitorCount />
+        </div>
         <p className='text-xs opacity-40'>
-          ©{year} Payam Yektamaram · Last updated {LAST_UPDATED}
+          © {year} Payam Yektamaram · Last updated {LAST_UPDATED}
         </p>
       </div>
     </footer>
