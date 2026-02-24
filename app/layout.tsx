@@ -7,8 +7,12 @@ import CursorTrail from './ui/cursor-trail';
 import { spaceMono } from './ui/fonts';
 import Footer from './ui/footer';
 import Navbar from './ui/navbar';
+import ScrollToTop from './ui/scroll-to-top';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? 'https://payamyek.com',
+  ),
   title: "Payam's Portfolio",
   description: 'A Website Made with Love ❤️',
 };
@@ -57,6 +61,7 @@ export default function RootLayout({
         <Analytics />
         <Navbar />
         <main className='flex flex-1 flex-col'>{children}</main>
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
