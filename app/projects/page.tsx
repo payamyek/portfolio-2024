@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import Image from 'next/image';
 import { CodeBlock } from '@/components/ui/code-block';
 
 export const metadata: Metadata = {
@@ -322,9 +323,11 @@ const Wordle = () => {
         </p>
         <div className='mockup-phone border-primary mt-2 w-fit'>
           <div className='mockup-phone-display'>
-            <img
-              alt='wallpaper'
+            <Image
+              alt='Wordle game screenshot'
               src='/wordle.png'
+              width={320}
+              height={568}
             />
           </div>
         </div>

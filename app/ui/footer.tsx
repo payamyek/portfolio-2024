@@ -34,7 +34,7 @@ export default function Footer() {
           />
         </div>
         <p className='text-xs opacity-40'>
-          © {year} Payam Yektamaram · Last updated {LAST_UPDATED}
+          ©{year} Payam Yektamaram · Last updated {LAST_UPDATED}
         </p>
       </div>
     </footer>
