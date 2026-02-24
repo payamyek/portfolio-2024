@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 import './globals.css';
 import { spaceMono } from './ui/fonts';
+import Footer from './ui/footer';
 import Navbar from './ui/navbar';
 
 export const metadata: Metadata = {
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Analytics />
         <Navbar />
         <main className='flex flex-1 flex-col'>{children}</main>
+        <Footer />
       </body>
     </html>
   );

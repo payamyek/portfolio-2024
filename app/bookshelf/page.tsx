@@ -1,4 +1,11 @@
+import type { Metadata } from 'next';
+
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: "Bookshelf | Payam's Portfolio",
+  description: 'Books Payam Yektamaram is currently reading or has read.',
+};
 
 const BOOKS = [
   {

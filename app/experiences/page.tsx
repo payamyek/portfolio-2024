@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import {
   SiPython,
@@ -15,6 +16,12 @@ import {
   SiRubyonrails,
   SiRuby,
 } from 'react-icons/si';
+
+export const metadata: Metadata = {
+  title: "Experiences | Payam's Portfolio",
+  description:
+    'Work history and professional experience of Payam Yektamaram, Software Engineer at StackAdapt.',
+};
 
 interface ExperienceInterface {
   startDate: Date;

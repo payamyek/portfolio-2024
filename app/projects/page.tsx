@@ -1,4 +1,12 @@
+import type { Metadata } from 'next';
+
 import { CodeBlock } from '@/components/ui/code-block';
+
+export const metadata: Metadata = {
+  title: "Projects | Payam's Portfolio",
+  description:
+    'Side projects by Payam Yektamaram including a UCI chess engine, life expectancy predictor, and Wordle clone.',
+};
 import {
   SiPython,
   SiPytest,
