@@ -17,8 +17,6 @@ export default function Navbar(): JSX.Element {
 const DesktopNavbar = () => {
   const pathname = usePathname();
 
-  console.log(pathname);
-
   return (
     <div className='navbar bg-base-100 hidden shadow-xs lg:flex'>
       <div className='flex-1'>
