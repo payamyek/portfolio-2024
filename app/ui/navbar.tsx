@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import ThemeToggle from './theme-toggle';
+import TorontoWeather from './toronto-weather';
 
 export default function Navbar(): JSX.Element {
   return (
@@ -72,6 +73,7 @@ const DesktopNavbar = () => {
             </Link>
           </li>
         </ul>
+        <TorontoWeather />
         <ThemeToggle />
       </div>
     </div>
