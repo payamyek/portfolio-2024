@@ -1,6 +1,7 @@
 import { FaFilePdf, FaGithub, FaLinkedinIn, FaMediumM } from 'react-icons/fa';
 
 import IconLink from './icons/icon-link';
+import TorontoClock from './toronto-clock';
 
 // Update this when you ship notable changes
 const LAST_UPDATED = 'February 2026';
@@ -33,6 +34,7 @@ export default function Footer() {
             icon={<FaFilePdf />}
           />
         </div>
+        <TorontoClock />
         <p className='text-xs opacity-40'>
           ©{year} Payam Yektamaram · Last updated {LAST_UPDATED}
         </p>

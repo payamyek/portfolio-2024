@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import Image from 'next/image';
 import { CodeBlock } from '@/components/ui/code-block';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: "Projects | Payam's Portfolio",

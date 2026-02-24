@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 
 import './globals.css';
+import CursorTrail from './ui/cursor-trail';
 import { spaceMono } from './ui/fonts';
 import Footer from './ui/footer';
 import Navbar from './ui/navbar';
@@ -52,6 +53,7 @@ export default function RootLayout({
             __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
           }}
         />
+        <CursorTrail />
         <Analytics />
         <Navbar />
         <main className='flex flex-1 flex-col'>{children}</main>
