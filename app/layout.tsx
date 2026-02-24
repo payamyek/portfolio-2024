@@ -44,7 +44,7 @@ export default function RootLayout({
       >
         <Analytics />
         <Navbar />
-        {children}
+        <main className='flex flex-1 flex-col'>{children}</main>
       </body>
     </html>
   );

@@ -9,7 +9,7 @@ const IMAGE_ALT =
 
 export default function Home() {
   return (
-    <div className='flex flex-col gap-12 py-8 lg:py-12'>
+    <div className='flex flex-col gap-12 px-4 py-8 lg:py-12'>
       {/* Hero */}
       <div className='flex flex-col-reverse gap-8 lg:flex-row lg:items-center lg:gap-16'>
         <div className='flex flex-col gap-6 text-center lg:flex-1 lg:text-left'>
@@ -38,7 +38,7 @@ export default function Home() {
               href='/experiences'
               className='btn btn-primary btn-sm md:btn-md'
             >
-              View My Work
+              View My Experiences
             </Link>
             <Link
               href='https://cdn.jsdelivr.net/gh/payamyek/career@main/resume/simplify_jobs_resume.pdf'

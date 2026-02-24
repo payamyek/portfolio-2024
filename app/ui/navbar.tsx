@@ -61,6 +61,14 @@ const DesktopNavbar = () => {
               Bookshelf
             </Link>
           </li>
+          <li>
+            <Link
+              href='/writing'
+              className={pathname === '/writing' ? 'active' : ''}
+            >
+              Writing
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
@@ -115,6 +123,9 @@ const MobileNavbar = () => {
             </li>
             <li onClick={handleClick}>
               <Link href='/bookshelf'>Bookshelf</Link>
+            </li>
+            <li onClick={handleClick}>
+              <Link href='/writing'>Writing</Link>
             </li>
           </ul>
         </div>
