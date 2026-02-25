@@ -85,6 +85,14 @@ const DesktopNavbar = () => {
               <ul className='bg-base-100/90 rounded-box border-base-content/10 z-20 w-48 border p-2 shadow-lg backdrop-blur-md'>
                 <li>
                   <Link
+                    href='/utils/chmod'
+                    className={pathname === '/utils/chmod' ? 'active' : ''}
+                  >
+                    Chmod Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href='/utils/cron'
                     className={pathname === '/utils/cron' ? 'active' : ''}
                   >
@@ -160,6 +168,9 @@ const MobileNavbar = () => {
               <details open>
                 <summary>Utilities</summary>
                 <ul>
+                  <li onClick={handleClick}>
+                    <Link href='/utils/chmod'>Chmod Calculator</Link>
+                  </li>
                   <li onClick={handleClick}>
                     <Link href='/utils/cron'>Cron Translator</Link>
                   </li>
