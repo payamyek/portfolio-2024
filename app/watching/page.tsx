@@ -70,13 +70,14 @@ const fetchMovies = async (): Promise<Movie[]> => {
 };
 
 const formatDate = (raw: string): string => {
+  // Letterboxd watchedDate comes as YYYY-MM-DD which is parsed as UTC midnight
   const date = new Date(raw);
   if (isNaN(date.getTime())) return '';
   return date.toLocaleDateString('en-CA', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
-    timeZone: 'America/Toronto',
+    timeZone: 'UTC', // Keep as UTC so it doesn't shift backward into the previous day in America/Toronto
   });
 };
 
