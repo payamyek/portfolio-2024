@@ -117,8 +117,8 @@ export default async function Reading() {
   return (
     <div className='flex flex-col gap-12 px-6 py-8 lg:py-12'>
       <div className='flex flex-col gap-2'>
-        <h1 className='text-3xl font-bold md:text-4xl'>Reading</h1>
-        <p className='opacity-60'>
+        <h1 className='text-3xl font-bold text-balance md:text-4xl'>Reading</h1>
+        <p className='text-pretty opacity-60'>
           Books from my{' '}
           <a
             href={PROFILE_URL}
@@ -134,7 +134,7 @@ export default async function Reading() {
       </div>
 
       {!hasBooks ? (
-        <p className='italic opacity-50'>
+        <p className='text-pretty italic opacity-50'>
           Could not load books right now. Check back later.
         </p>
       ) : (
@@ -142,10 +142,10 @@ export default async function Reading() {
           {/* Currently Reading */}
           {currentlyReading.length > 0 && (
             <section className='flex flex-col gap-6'>
-              <h2 className='text-lg font-semibold tracking-tight opacity-70 md:text-xl'>
+              <h2 className='text-lg font-semibold tracking-tight text-balance opacity-70 md:text-xl'>
                 Currently Reading
               </h2>
-              <div className='flex flex-wrap gap-6'>
+              <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
                 {currentlyReading.map((book) => (
                   <BookCard
                     key={book.link}
@@ -160,10 +160,10 @@ export default async function Reading() {
           {/* Recently Read */}
           {recentlyRead.length > 0 && (
             <section className='flex flex-col gap-6'>
-              <h2 className='text-lg font-semibold tracking-tight opacity-70 md:text-xl'>
+              <h2 className='text-lg font-semibold tracking-tight text-balance opacity-70 md:text-xl'>
                 Recently Read
               </h2>
-              <div className='flex flex-wrap gap-6'>
+              <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
                 {recentlyRead.map((book) => (
                   <BookCard
                     key={book.link}
@@ -191,7 +191,7 @@ const BookCard = ({
     href={book.link}
     target='_blank'
     rel='noopener noreferrer'
-    className='group flex w-32 flex-col gap-2 sm:w-36'
+    className='group flex flex-col gap-2'
     aria-label={`${book.title} by ${book.author}`}
     tabIndex={0}
   >
@@ -202,17 +202,19 @@ const BookCard = ({
       />
     </div>
     <div className='flex flex-col gap-0.5'>
-      <p className='line-clamp-2 text-sm leading-tight font-medium opacity-90'>
+      <p className='line-clamp-2 text-sm leading-tight font-medium text-pretty opacity-90'>
         {book.title}
       </p>
-      <p className='text-xs opacity-50'>{book.author}</p>
+      <p className='text-xs text-pretty opacity-50'>{book.author}</p>
       {showRating && book.rating > 0 && (
         <div className='flex items-center gap-2'>
           <Stars rating={book.rating} />
         </div>
       )}
       {showRating && book.dateRead && (
-        <p className='text-xs opacity-35'>{formatDate(book.dateRead)}</p>
+        <p className='text-xs tabular-nums opacity-35'>
+          {formatDate(book.dateRead)}
+        </p>
       )}
     </div>
   </Link>
