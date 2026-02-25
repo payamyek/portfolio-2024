@@ -15,6 +15,8 @@ export default function VisitorCount() {
   if (!count) return null;
 
   return (
-    <p className='text-xs opacity-40'>visitor #{count.toLocaleString()}</p>
+    <p className='text-xs opacity-40'>
+      {count.toLocaleString()} unique visitors
+    </p>
   );
 }
