@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MdLocationPin } from 'react-icons/md';
 
 import IconGroup from './ui/icons/icon-group';
+import SpotlightStack from './ui/spotlight-stack';
 import TypewriterText from './ui/typewriter-text';
 import VisitorGlobe from './ui/visitor-globe';
 
@@ -113,6 +114,13 @@ export default function Home() {
             and think way too hard about software design.
           </p>
         </div>
+      </section>
+
+      <hr className='my-4 opacity-15' />
+
+      <section className='flex flex-col gap-6'>
+        <h2 className='text-2xl font-bold md:text-3xl'>Tech Stack</h2>
+        <SpotlightStack />
       </section>
 
       <hr className='my-4 opacity-15' />
