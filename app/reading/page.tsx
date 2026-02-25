@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import Parser from 'rss-parser';
+
+import BookCover from '../ui/book-cover';
 
 export const metadata: Metadata = {
   title: "Reading | Payam's Portfolio",
@@ -194,14 +195,10 @@ const BookCard = ({
     aria-label={`${book.title} by ${book.author}`}
     tabIndex={0}
   >
-    <div className='relative aspect-[2/3] w-full overflow-hidden rounded-md shadow-md transition-transform duration-200 group-hover:scale-[1.03]'>
-      <Image
+    <div className='bg-base-200 relative aspect-[2/3] w-full overflow-hidden rounded-md shadow-md transition-transform duration-200 group-hover:scale-[1.03]'>
+      <BookCover
         src={book.coverUrl}
         alt={`Cover of ${book.title}`}
-        fill
-        sizes='(max-width: 640px) 128px, 144px'
-        className='object-cover'
-        unoptimized
       />
     </div>
     <div className='flex flex-col gap-0.5'>
