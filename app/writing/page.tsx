@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
 
 import Link from 'next/link';
+import Parser from 'rss-parser';
 
 export const metadata: Metadata = {
   title: "Writing | Payam's Portfolio",
   description:
     'Articles and thoughts by Payam Yektamaram on software engineering, technology, and more.',
 };
+
+export const revalidate = 3600;
 
 interface Article {
   title: string;
@@ -16,74 +19,47 @@ interface Article {
   readTime: number;
 }
 
-function stripHtml(html: string): string {
-  return html
+type MediumItem = {
+  contentEncoded?: string;
+};
+
+const parser = new Parser<Record<string, never>, MediumItem>({
+  customFields: {
+    item: [['content:encoded', 'contentEncoded']],
+  },
+});
+
+const stripHtml = (html: string): string =>
+  html
     .replace(/<[^>]*>/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&nbsp;/g, ' ')
+    .replace(/&\w+;/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-}
 
 async function getMediumPosts(): Promise<Article[]> {
   try {
-    const res = await fetch('https://medium.com/feed/@payamyek', {
-      next: { revalidate: 3600 },
-    });
+    const feed = await parser.parseURL('https://medium.com/feed/@payamyek');
 
-    if (!res.ok) return [];
+    return feed.items
+      .filter((item) => item.title && item.link)
+      .map((item) => {
+        const plainText = stripHtml(item.contentEncoded ?? '');
+        const excerpt =
+          plainText.length > 200
+            ? plainText.slice(0, 200).trimEnd() + '…'
+            : plainText;
 
-    const xml = await res.text();
-    const items: Article[] = [];
+        const wordCount = plainText.split(/\s+/).filter(Boolean).length;
+        const readTime = Math.max(1, Math.round(wordCount / 265));
 
-    for (const match of xml.matchAll(/<item>([\s\S]*?)<\/item>/g)) {
-      const item = match[1];
-
-      const title =
-        item.match(/<title><!\[CDATA\[(.*?)\]\]><\/title>/)?.[1] ??
-        item.match(/<title>(.*?)<\/title>/)?.[1] ??
-        '';
-
-      // Medium puts the URL after the first <link> tag (it's a self-closing tag in RSS 2.0)
-      const link =
-        item.match(/<link\s*\/?>(https?:\/\/[^\s<]+)/)?.[1] ??
-        item.match(/<guid[^>]*>(https?:\/\/[^\s<]+)<\/guid>/)?.[1] ??
-        '';
-
-      const pubDate = item.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] ?? '';
-
-      const rawDesc =
-        item.match(
-          /<description><!\[CDATA\[([\s\S]*?)\]\]><\/description>/,
-        )?.[1] ??
-        item.match(/<description>([\s\S]*?)<\/description>/)?.[1] ??
-        '';
-
-      const stripped = stripHtml(rawDesc);
-      const excerpt =
-        stripped.length > 200
-          ? stripped.slice(0, 200).trimEnd() + '…'
-          : stripped;
-
-      // Use Medium's built-in estimate, fall back to ~200 wpm word count
-      const mediumTime = item.match(
-        /<medium:estimated_read_time>(\d+)<\/medium:estimated_read_time>/,
-      )?.[1];
-      const readTime = mediumTime
-        ? parseInt(mediumTime, 10)
-        : Math.max(1, Math.round(stripped.split(/\s+/).length / 200));
-
-      if (title && link) {
-        items.push({ title, link, pubDate, excerpt, readTime });
-      }
-    }
-
-    return items;
+        return {
+          title: item.title!,
+          link: item.link!,
+          pubDate: item.pubDate ?? '',
+          excerpt,
+          readTime,
+        };
+      });
   } catch {
     return [];
   }
@@ -96,6 +72,7 @@ function formatDate(raw: string): string {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'America/Toronto',
   });
 }
 
