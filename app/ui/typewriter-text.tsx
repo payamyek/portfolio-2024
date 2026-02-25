@@ -40,7 +40,7 @@ export default function TypewriterText() {
         completedRef.current += 1;
         if (completedRef.current >= STOP_AFTER) {
           // Typed the final phrase fully — stop here, no more deleting
-          setIsDone(true);
+          timeout.current = setTimeout(() => setIsDone(true), 0);
         } else {
           timeout.current = setTimeout(() => setIsDeleting(true), PAUSE_MS);
         }
@@ -52,8 +52,10 @@ export default function TypewriterText() {
           DELETING_MS,
         );
       } else {
-        setIsDeleting(false);
-        setPhraseIndex((i) => (i + 1) % PHRASES.length);
+        timeout.current = setTimeout(() => {
+          setIsDeleting(false);
+          setPhraseIndex((i) => (i + 1) % PHRASES.length);
+        }, 0);
       }
     }
 

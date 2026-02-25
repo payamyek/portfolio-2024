@@ -1,8 +1,8 @@
 'use client';
-import { IconCheck, IconCopy } from '@tabler/icons-react';
+import { Check, Copy } from 'lucide-react';
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 type CodeBlockProps = {
   language: string;
@@ -80,7 +80,7 @@ export const CodeBlock = ({
               onClick={copyToClipboard}
               className='flex items-center gap-1 font-sans text-xs text-zinc-400 transition-colors hover:text-zinc-200'
             >
-              {copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
+              {copied ? <Check size={14} /> : <Copy size={14} />}
             </button>
           </div>
         )}

@@ -1,5 +1,4 @@
 import { createHash } from 'crypto';
-
 import Redis from 'ioredis';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
