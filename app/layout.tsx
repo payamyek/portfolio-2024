@@ -9,6 +9,7 @@ import Footer from './ui/footer';
 import Navbar from './ui/navbar';
 import QueryProvider from './ui/query-provider';
 import ScrollToTop from './ui/scroll-to-top';
+import ThemeProvider from './ui/theme-provider';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -52,12 +53,6 @@ export default function RootLayout({
       <body
         className={`${spaceMono.className} mx-auto flex min-h-dvh flex-col antialiased lg:w-3/5`}
       >
-        {/* Runs synchronously before first paint — prevents flash of wrong theme */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}`,
-          }}
-        />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{
@@ -91,14 +86,16 @@ export default function RootLayout({
             }),
           }}
         />
-        <QueryProvider>
-          <CursorTrail />
-          <Analytics />
-          <Navbar />
-          <main className='flex flex-1 flex-col'>{children}</main>
-          <ScrollToTop />
-          <Footer />
-        </QueryProvider>
+        <ThemeProvider>
+          <QueryProvider>
+            <CursorTrail />
+            <Analytics />
+            <Navbar />
+            <main className='flex flex-1 flex-col'>{children}</main>
+            <ScrollToTop />
+            <Footer />
+          </QueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
