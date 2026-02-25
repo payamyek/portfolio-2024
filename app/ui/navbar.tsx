@@ -79,6 +79,21 @@ const DesktopNavbar = () => {
               Watching
             </Link>
           </li>
+          <li>
+            <details>
+              <summary>Utilities</summary>
+              <ul className='bg-base-100/90 rounded-box border-base-content/10 z-20 w-48 border p-2 shadow-lg backdrop-blur-md'>
+                <li>
+                  <Link
+                    href='/utils/cron'
+                    className={pathname === '/utils/cron' ? 'active' : ''}
+                  >
+                    Cron Translator
+                  </Link>
+                </li>
+              </ul>
+            </details>
+          </li>
         </ul>
         <TorontoWeather />
       </div>
@@ -140,6 +155,16 @@ const MobileNavbar = () => {
             </li>
             <li onClick={handleClick}>
               <Link href='/watching'>Watching</Link>
+            </li>
+            <li>
+              <details open>
+                <summary>Utilities</summary>
+                <ul>
+                  <li onClick={handleClick}>
+                    <Link href='/utils/cron'>Cron Translator</Link>
+                  </li>
+                </ul>
+              </details>
             </li>
           </ul>
         </div>
