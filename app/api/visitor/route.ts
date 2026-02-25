@@ -33,12 +33,32 @@ export async function POST() {
 
     const fingerprint = createFingerprint(ip, ua);
 
-    // PFADD registers the fingerprint in the HyperLogLog.
-    // Internally it only updates probabilistic registers —
-    // the original hash is discarded, not stored.
-    await redis.pfadd(HLL_KEY, fingerprint);
+    // Track uniqueness
+    const isNew = await redis.pfadd(HLL_KEY, fingerprint);
 
-    // PFCOUNT returns the approximate cardinality (~0.81% error)
+    // If it's a truly new, unique visitor (to the HLL), track their rough location
+    if (isNew === 1 && ip !== 'unknown' && ip !== '127.0.0.1' && ip !== '::1') {
+      try {
+        const geoRes = await fetch(
+          `http://ip-api.com/json/${ip}?fields=status,country,city,lat,lon`,
+        );
+        const geoData = await geoRes.json();
+
+        if (geoData.status === 'success') {
+          // Store anonymized coordinates (rounded to 1 decimal place = ~11km radius)
+          // Privacy focused.
+          const lat = Math.round(geoData.lat * 10) / 10;
+          const lon = Math.round(geoData.lon * 10) / 10;
+          const locKey = `${lat},${lon}`;
+
+          await redis.hincrby('visitor_locations', locKey, 1);
+        }
+      } catch (e) {
+        // Silently ignore geo-lookup failures so it doesn't break the counter
+        console.error('Geo lookup failed', e);
+      }
+    }
+
     const count = await redis.pfcount(HLL_KEY);
 
     return NextResponse.json({ count });
@@ -48,12 +68,22 @@ export async function POST() {
 }
 
 export async function GET() {
-  if (!redis) return NextResponse.json({ count: null });
+  if (!redis) return NextResponse.json({ count: null, locations: {} });
 
   try {
-    const count = await redis.pfcount(HLL_KEY);
-    return NextResponse.json({ count });
+    const [count, locations] = await Promise.all([
+      redis.pfcount(HLL_KEY),
+      redis.hgetall('visitor_locations'),
+    ]);
+
+    // Parse the location string values into integers for the frontend
+    const parsedLocations: Record<string, number> = {};
+    for (const [key, val] of Object.entries(locations)) {
+      parsedLocations[key] = parseInt(val, 10);
+    }
+
+    return NextResponse.json({ count, locations: parsedLocations });
   } catch {
-    return NextResponse.json({ count: null });
+    return NextResponse.json({ count: null, locations: {} });
   }
 }

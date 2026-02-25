@@ -4,6 +4,7 @@ import { MdLocationPin } from 'react-icons/md';
 
 import IconGroup from './ui/icons/icon-group';
 import TypewriterText from './ui/typewriter-text';
+import VisitorGlobe from './ui/visitor-globe';
 
 const IMAGE_ALT =
   'A picture of Payam Yektamaram steering a sail-boat in Squamish, British Columbia.';
@@ -112,6 +113,17 @@ export default function Home() {
             and think way too hard about software design.
           </p>
         </div>
+      </section>
+
+      <hr className='my-4 opacity-15' />
+
+      <section className='flex flex-col items-center justify-center gap-2'>
+        <h2 className='text-2xl font-bold md:text-3xl'>Visitor Heatmap</h2>
+        <p className='max-w-lg text-center opacity-60'>
+          A real-time, privacy-preserving 3D globe plotting the anonymized
+          general location of the most recent visitors to this site.
+        </p>
+        <VisitorGlobe />
       </section>
     </div>
   );
