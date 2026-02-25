@@ -108,10 +108,8 @@ export default async function Watching() {
   return (
     <div className='flex flex-col gap-12 px-6 py-8 lg:py-12'>
       <div className='flex flex-col gap-2'>
-        <h1 className='text-3xl font-bold text-balance md:text-4xl'>
-          Watching
-        </h1>
-        <p className='text-pretty opacity-60'>
+        <h1 className='text-3xl font-bold md:text-4xl'>Watching</h1>
+        <p className='opacity-60'>
           Recent films I watched from my{' '}
           <a
             href={PROFILE_URL}
@@ -127,11 +125,11 @@ export default async function Watching() {
       </div>
 
       {recentlyWatched.length === 0 ? (
-        <p className='text-pretty italic opacity-50'>
+        <p className='italic opacity-50'>
           Could not load movies right now. Check back later.
         </p>
       ) : (
-        <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
+        <div className='grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6'>
           {recentlyWatched.map((movie) => (
             <MovieCard
               key={movie.link}
@@ -167,11 +165,11 @@ const MovieCard = ({ movie }: { movie: Movie }) => (
       )}
     </div>
     <div className='flex flex-col gap-0.5'>
-      <p className='line-clamp-2 text-xs leading-tight font-medium text-pretty opacity-90 sm:text-sm'>
+      <p className='line-clamp-2 text-xs leading-tight font-medium opacity-90 sm:text-sm'>
         {movie.title}
       </p>
       {movie.dateWatched && (
-        <p className='text-[10px] text-pretty tabular-nums opacity-40 sm:text-xs'>
+        <p className='text-[10px] opacity-40 sm:text-xs'>
           {formatDate(movie.dateWatched)}
         </p>
       )}
