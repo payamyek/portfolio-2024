@@ -7,6 +7,7 @@ import Footer from './ui/footer';
 import Navbar from './ui/navbar';
 import QueryProvider from './ui/query-provider';
 import ScrollToTop from './ui/scroll-to-top';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -26,6 +27,21 @@ export default function RootLayout({
       lang='en'
       suppressHydrationWarning
     >
+      <head>
+        <Script
+          defer
+          src='https://umami-production-7a26.up.railway.app/script.js'
+          data-website-id='2f47c0a6-6836-44fa-8f34-b4be0579889e'
+        ></Script>
+        <Script
+          defer
+          src='https://umami-production-7a26.up.railway.app/recorder.js'
+          data-website-id='2f47c0a6-6836-44fa-8f34-b4be0579889e'
+          data-sample-rate='0.15'
+          data-mask-level='moderate'
+          data-max-duration='300000'
+        ></Script>
+      </head>
       <link
         rel='apple-touch-icon'
         sizes='180x180'
